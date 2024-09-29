@@ -1,4 +1,5 @@
 import { validateWebAppData } from "@grammyjs/validator";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
     const res = await request.json();
@@ -12,13 +13,13 @@ export async function POST(request: Request) {
         // Parse the user data
         const user = JSON.parse(decodeURI(initDataParams.get("user") ?? ""));
 
-        return Response.json({
+        return NextResponse.json({
             success: true,
             message: `Hello ${user.first_name} ${user.last_name}!`,
         });
     } else {
         // Return an error if the data is invalid
-        return Response.json({
+        return NextResponse.json({
             success: false,
             message: "Invalid data",
         });
