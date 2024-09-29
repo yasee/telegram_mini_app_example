@@ -30,7 +30,7 @@ export default function Top() {
             });
     };
     return (
-        <div>
+        <>
             <h1 className="text-2xl">Telegram mini app sample</h1>
             <div className="text-lg text-cyan-500">{message}</div>
             <button
@@ -39,6 +39,6 @@ export default function Top() {
             >
                 get profile
             </button>
-        </div>
+        </>
     );
 }
