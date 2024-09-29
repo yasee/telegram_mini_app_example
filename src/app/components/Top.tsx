@@ -10,7 +10,7 @@ declare global {
 
 export default function Top() {
     const [message, setMessage] = useState("");
-    const handleGetUser = () => {
+    const handleValidationTest = () => {
         fetch("/api/user", {
             method: "POST",
             headers: {
@@ -34,10 +34,10 @@ export default function Top() {
             <h1 className="text-2xl">Telegram mini app sample</h1>
             <div className="text-lg text-cyan-500">{message}</div>
             <button
-                onClick={handleGetUser}
+                onClick={handleValidationTest}
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
-                get profile
+                validation test
             </button>
         </>
     );

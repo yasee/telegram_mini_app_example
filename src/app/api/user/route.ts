@@ -9,8 +9,10 @@ export async function POST(request: Request) {
     const botToken = process.env.TELEGRAM_API_TOKEN ?? "";
 
     // Validate the initData
+    // https://core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app
     if (validateWebAppData(botToken, initDataParams)) {
         // Parse the user data
+        // https://core.telegram.org/bots/webapps#webappuser
         const user = JSON.parse(decodeURI(initDataParams.get("user") ?? ""));
 
         return NextResponse.json({
