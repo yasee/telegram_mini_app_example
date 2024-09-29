@@ -28,7 +28,6 @@ export default function Top() {
                     alert(data.message);
                 }
             });
-        setMessage("Hello, world!");
     };
     return (
         <div>
